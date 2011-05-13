@@ -1,0 +1,19 @@
+<h1>New Playlist</h1>
+
+<%= form_tag( '/playlist', :method => "put") do %>
+
+  <p>
+  Artist Name:
+  <%= select("artist", "name", @artists, {:include_blank => false}) %>
+  <br>
+  Minimum Rating:
+  <%= select("rating", "value", @ratings, {:include_blank => false}) %>
+
+  <p>
+  <%= submit_tag("Filter Playlist") %>
+  <%= link_to 'Select all', playlist_index_path %>
+  <%= link_to 'Back to List', mp3s_path %>
+
+<% end %>
+
+

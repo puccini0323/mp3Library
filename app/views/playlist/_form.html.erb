@@ -1,0 +1,17 @@
+<% if @mp3s.empty? %>
+  <p>
+  no songs selected
+  <br>
+<% else %>
+  <div style="border: 1px solid gray;padding-left: 5px;">
+    #EXTM3U
+     <br>
+     <% @mp3s.uniq.each do |mp3| %>
+        <p>
+        #EXTINF:<%= mp3.length %>,<%= mp3.artist_name %> - <%= mp3.title %>
+        <br>
+        <%= mp3.url %>
+     <% end %>
+  </div>
+
+<% end %>

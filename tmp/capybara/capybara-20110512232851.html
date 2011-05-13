@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>Musica</title>
+  <link type="text/css" rel="stylesheet" media="screen" href="/Users/lendalberti/work/MyStuff/musica/public/stylesheets/scaffold.css?1305065604" />
+  <script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/prototype.js?1305064939"></script>
+<script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/effects.js?1305064939"></script>
+<script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/dragdrop.js?1305064939"></script>
+<script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/controls.js?1305064939"></script>
+<script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/rails.js?1305064939"></script>
+<script type="text/javascript" src="/Users/lendalberti/work/MyStuff/musica/public/javascripts/application.js?1305064939"></script>
+  
+</head>
+<body>
+
+<p id="notice"></p>
+
+<br />
+
+<table border="1">
+  <caption>** MP3 Info **</caption>
+  <tbody><tr><th>
+    URL
+  </th>
+  <th>
+    Title
+  </th>
+  <th>
+    Artist Name
+  </th>
+  <th>
+    Length
+  </th>
+  <th>Average<br />Rating</th>
+
+  </tr><tr>
+    <td>
+      /MyMusic/new_age/sample1.mp3
+    </td>
+    <td>
+      New Beginning
+    </td>
+    <td>
+      Blue Stone
+    </td>
+    <td>
+      450
+    </td>
+    <td>NaN</td>
+  </tr>
+</tbody></table>
+
+<br />
+<table border="1">
+  <caption>** Ratings **</caption>
+  <tbody><tr><th>
+    User
+  </th>
+  <th>
+    Rating
+  </th>
+
+</tr></tbody></table>
+
+<br />
+<b>Add a rating:</b>
+<form method="post" id="new_rating" class="new_rating" action="/mp3s/1/ratings" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="✓" name="utf8" /></div>
+  <div class="field">
+    <label for="rating_user">User</label><br />
+    <input type="text" size="30" name="rating[user]" id="rating_user" />
+  </div>
+  <div class="field">
+    <label for="rating_value">Value</label><br />
+    <select name="rating[value]" id="rating_value"><option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option></select>
+  </div>
+  <div class="actions">
+    <input type="submit" value="Create Rating" name="commit" id="rating_submit" />
+  </div>
+</form>
+
+
+<a href="/mp3s/1/edit">Edit</a> |
+<a href="/mp3s">Back</a>
+
+
+
+
+</body></html>

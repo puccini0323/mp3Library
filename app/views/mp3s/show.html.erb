@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+
+<table border="1">
+  <caption>** MP3 Info **</caption>
+  <th>
+    URL
+  </th>
+  <th>
+    Title
+  </th>
+  <th>
+    Artist Name
+  </th>
+  <th>
+    Length
+  </th>
+  <th>Average<br>Rating</th>
+
+  <tr>
+    <td>
+      <%= @mp3.url %>
+    </td>
+    <td>
+      <%= @mp3.title %>
+    </td>
+    <td>
+      <%= @mp3.artist_name %>
+    </td>
+    <td>
+      <%= @mp3.length %>
+    </td>
+    <td><%= sprintf( "%0.02f", @mp3.average_rating )%></td>
+  </tr>
+</table>
+
+<br>
+<table border="1">
+  <caption>** Ratings **</caption>
+  <th>
+    User
+  </th>
+  <th>
+    Rating
+  </th>
+
+  <% @mp3.ratings.each do |rating| %>
+    <tr>
+      <td>
+        <%= rating.user %>
+      </td>
+      <td>
+        <%= rating.value %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<b>Add a rating:</b>
+<%= form_for([@mp3, @mp3.ratings.build]) do |f| %>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.select :value, (1..5) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_mp3_path(@mp3) %> |
+<%= link_to 'Back', mp3s_path %>
